@@ -1,0 +1,60 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+ background-image: url('aloulou.jpg.jpg');
+  background-size:auto; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+
+}
+header h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-top: 30px;
+}
+header h1 span {
+  color: rgb(2, 2, 2);
+}
+header h1 {
+  color: #5829dcb9;
+  font-family: 'Brush Script MT', cursive;
+}
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.card {
+  width: 300px;
+}
+.card img {
+  width: 300px;
+  height: 450px; /* fixe la hauteur */
+  border-radius: 30px;
+  object-fit: cover; /* recadre sans déformer */
+  transition: transform 0.3s;
+}
+img {
+  transition: transform 0.6s ease; /* animation douce */
+}
+
+img:hover {
+  transform: scale(1.1); /* agrandit de 10% */
+}
+.card img:hover{
+   box-shadow: 0 30px 60px rgba(63, 14, 199, 0.885);
+   border-radius:30px;
+}
+.card p {
+  font-style: italic;
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 1rem;
+  text-shadow: #881ee5 0px 0px 20px;
+}

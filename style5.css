@@ -1,0 +1,145 @@
+/* ================= BASE ================= */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0a0f1c;
+    color: #e5e7eb;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ================= FROST SMOKE BACKGROUND ================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0,191,255,0.08), transparent 70%);
+    animation: smokeMove 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes smokeMove {
+    0% { transform: translate(0,0) rotate(0deg); }
+    50% { transform: translate(-5%,5%) rotate(180deg); }
+    100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* ================= BACK LINK ================= */
+
+a {
+    color: #00bfff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-weight: 500;
+}
+
+a:hover {
+    color: white;
+    text-shadow: 0 0 10px #00bfff;
+}
+
+div a {
+    display: inline-block;
+    margin: 30px;
+}
+
+/* ================= SECTION TITLES ================= */
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 60px;
+    color: #3b82f6;
+    text-shadow: 0 0 15px #3b82f6;
+}
+
+/* ================= CUSTOM BLUE LABEL (replacement for <blou>) ================= */
+
+blou {
+    display: block;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #00bfff;
+    text-shadow: 0 0 12px #00bfff;
+    margin-top: 50px;
+}
+
+/* ================= TEXT ================= */
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.8;
+    max-width: 1000px;
+    margin: 15px auto;
+    color: #cbd5e1;
+}
+
+/* ================= ICE DIVIDER EFFECT ================= */
+
+blou::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50%;
+    margin: 15px auto 0;
+    background: linear-gradient(90deg, transparent, #00bfff, transparent);
+    animation: iceFlow 3s linear infinite;
+}
+
+@keyframes iceFlow {
+    0% { background-position: -200px; }
+    100% { background-position: 200px; }
+}
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 50px 20px;
+}
+
+.gallery img {
+    width: 240px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #00bfff;
+    transition: 0.4s ease;
+    box-shadow: 0 0 15px rgba(0,191,255,0.3);
+}
+
+/* Hover glow effect */
+
+.gallery img:hover {
+    transform: scale(1.08) translateY(-6px);
+    box-shadow: 0 0 30px #00bfff;
+    z-index: 2;
+}
+
+/* ================= FADE IN ANIMATION ================= */
+
+body > * {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+body > *:nth-child(1) { animation-delay: 0.2s; }
+body > *:nth-child(2) { animation-delay: 0.4s; }
+body > *:nth-child(3) { animation-delay: 0.6s; }
+body > *:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

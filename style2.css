@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0a0f1c;
+    color: #e5e7eb;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ================= FROST SMOKE BACKGROUND ================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0,191,255,0.08), transparent 70%);
+    animation: smokeMove 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes smokeMove {
+    0% { transform: translate(0,0) rotate(0deg); }
+    50% { transform: translate(-5%,5%) rotate(180deg); }
+    100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: linear-gradient(to right, #000814, #001d3d);
+    text-align: center;
+    padding: 80px 20px;
+    border-bottom: 2px solid #00bfff;
+}
+
+h1 {
+    font-size: 44px;
+    color: #00bfff;
+    text-shadow: 0 0 15px #00bfff;
+    margin: 0;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 70px 20px;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+/* Alternate dark blue */
+section:nth-of-type(even) {
+    background-color: #111827;
+}
+
+/* ================= ICE DIVIDER LINE ================= */
+
+section::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 60%;
+    margin: 50px auto 0;
+    background: linear-gradient(90deg, transparent, #00bfff, transparent);
+    animation: iceFlow 3s linear infinite;
+}
+
+@keyframes iceFlow {
+    0% { background-position: -200px; }
+    100% { background-position: 200px; }
+}
+
+/* ================= TEXT ================= */
+
+h2 {
+    color: #3b82f6;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #3b82f6;
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* ================= LINKS ================= */
+
+a {
+    color: #00bfff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: white;
+    text-shadow: 0 0 10px #00bfff;
+}
+
+/* ================= HORIZONTAL IMAGE LAYER ================= */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.gallery img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #00bfff;
+    transition: 0.4s ease;
+    box-shadow: 0 0 15px rgba(0,191,255,0.3);
+}
+
+/* Layered hover effect */
+.gallery img:hover {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 0 25px #00bfff;
+    z-index: 2;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #000814;
+    text-align: center;
+    padding: 40px;
+    border-top: 2px solid #00bfff;
+}
